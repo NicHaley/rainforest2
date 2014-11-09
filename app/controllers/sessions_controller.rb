@@ -6,11 +6,12 @@ class SessionsController < ApplicationController
 	# we are only logging in, not creating a new user.
 
 	def create
-  	user = User.find_by(email: params[:email])	# Find user matching input email in db
+  	user = User.find_by_email(params[:email])	# Find user matching input email in db
   	if user && user.authenticate(params[:password])  # If user exists and password correct
   		session[:user_id] = user.id				# Create a key/value pair
-  		redirect_to products_url, notice: "Logged in!"
+  		redirect_to products_url, notice: "Logged in!"		# Set up flash notice as a key/value pair
   	else
+  		flash.now[:alert] = "Invalid email or password"		# Set up flash alert as a key/value pair
   		render "new"
   	end
   end
