@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+
+    if current_user
+      @review = @product.reviews.build
+    end
   end
 
   # GET /products/new
@@ -73,4 +77,4 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :price_in_cents)
     end
-end
+  end
