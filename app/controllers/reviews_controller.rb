@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = @product.reviews.build(review_params)
-		@review.user = current_user
+		@review.user = current_user		# This ensures the new review belongs to the current user
 
 		if @review.save
 			redirect_to products_path, notice: "Review successfully created"

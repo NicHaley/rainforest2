@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   private 
 
   def current_user
+    # ||= ie. if current user doesn't already have a value set it to this
   	@current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
