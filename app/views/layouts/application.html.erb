@@ -6,7 +6,7 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 	<%= render 'shared/navigation' %>
 	<div id="main-container" class="container"><!-- This breaks the login for some reason -->
 	
@@ -21,9 +21,9 @@
 			<% if current_user %>
 			Signed in as <%= current_user.name %> | <%= link_to "Log out", session_path("current"), :method => :delete %>
 			<% else %>
-				<% if request.original_url == new_session_url %>
+				<% if controller_name == "sessions" %>
 					<%= link_to "Sign up", new_user_path %>
-				<% elsif request.original_url == new_user_url %>
+				<% elsif controller_name == "users" %>
 					<%= link_to "Log in", new_session_path %>
 				<% else %>
 					<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
