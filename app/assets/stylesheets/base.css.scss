@@ -23,12 +23,15 @@ h2 {
 	float: right;
 }
 
-.navbar-brand {
-	clear: both;
-	display: inline-block;
-}
-
 #logo {
 	height: 20px;
 	display: inline-block;
+}
+
+#title {
+	font-family: Pacifico;
+	clear: both;
+	display: inline-block;
+	font-size: 30px;
+	color: black;
 }
