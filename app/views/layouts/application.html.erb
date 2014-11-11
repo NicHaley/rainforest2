@@ -7,17 +7,8 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<!-- <div id="main-container" class="container"> --><!-- This breaks the login for some reason -->
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">
-					Rainforest
-<!-- 					<img id="logo" src="http://static.squarespace.com/static/51782a3be4b0be6d32e91928/t/5179773be4b0f0be01bf5952/1366914876747/Plants-Trees-Leaf-icon.png" /> -->
-				</a>
-			</div>
-		</div>
-	</nav>
+	<%= render 'shared/navigation' %>
+	<div id="main-container" class="container"><!-- This breaks the login for some reason -->
 	
 		<% if flash[:notice] %>
 		<p id="notice"><%= flash[:notice] %></p>
@@ -30,16 +21,16 @@
 			<% if current_user %>
 			Signed in as <%= current_user.name %> | <%= link_to "Log out", session_path("current"), :method => :delete %>
 			<% else %>
-			<% if request.original_url == new_session_url %>
-			<%= link_to "Sign up", new_user_path %>
-			<% elsif request.original_url == new_user_url %>
-			<%= link_to "Log in", new_session_path %>
-			<% else %>
-			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-			<% end %>
+				<% if request.original_url == new_session_url %>
+					<%= link_to "Sign up", new_user_path %>
+				<% elsif request.original_url == new_user_url %>
+					<%= link_to "Log in", new_session_path %>
+				<% else %>
+					<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+				<% end %>
 			<% end %>
 		</p>
 		<%= yield %>
-	<!-- </div>  -->
+	</div> 
 </body>
 </html>

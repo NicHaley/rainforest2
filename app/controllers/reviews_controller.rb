@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+	# Need to load the product so that we can use @product as a model
 	before_filter :load_product
 
 	# Ensure user is logged in before creating or destroying reviews
