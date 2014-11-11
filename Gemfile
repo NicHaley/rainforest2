@@ -37,6 +37,8 @@ end
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+gem 'ransack'	# This is for search bars and sortable links
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
