@@ -1,8 +1,3 @@
-h2 {
-	text-align: center;
-	clear: both;
-}
-
 .userinfo {
 	float: right;
 	display: inline-block;
@@ -33,5 +28,29 @@ h2 {
 	clear: both;
 	display: inline-block;
 	font-size: 30px;
-	color: black;
+	color: #313131;
+}
+
+.navbar-default{
+	background-color: #cef4ca;
+	margin: 0px 0px 50px 0px;
+	border-radius: 0px;
+	border: 0px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+h2 {
+	text-align: center;
+	clear: both;
+	font-family: Quattrocento;
+	font-size: 26px;
+	font-weight: 700;
+}
+
+.panel {
+	margin: auto;
+	width: 400px;
+	text-align: center;
+	background-color: #cef4ca;
 }
