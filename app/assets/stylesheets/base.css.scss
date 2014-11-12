@@ -35,7 +35,6 @@
 	background-color: #cef4ca;
 	margin: 0px 0px 50px 0px;
 	border-radius: 0px;
-	border: 0px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -48,9 +47,20 @@ h2 {
 	font-weight: 700;
 }
 
+h3 {
+	text-align: center;
+	clear: both;
+	font-family: Quattrocento;
+	font-size: 22px;
+	font-weight: 700;
+}
+
 .panel {
 	margin: auto;
 	width: 400px;
 	text-align: center;
-	background-color: #cef4ca;
+	background-color: #6ecc79;
+	margin-bottom: 50px;
 }
+
+
